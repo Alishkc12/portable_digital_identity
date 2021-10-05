@@ -6,7 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from accounts.models import User
 from .form import Tribhuwan_universitySignUpForm
 from django.http import HttpResponse
-
+from .models import dept_tu
 
 
 class tribhuwan_university_register(CreateView):
@@ -54,16 +54,20 @@ def logout_view(request):
 
 
 def profile(request):
+    data=dept_tu.objects.all();
     
     if request.user.is_authenticated:
         if request.user.is_tu == False:
             return redirect('/')
         a=request.user.is_tu
         e=request.user
-        b={'c':a,'d':e}
+        b={'c':a,'d':e,'data':data}
         return render(request,'tribhuwan_university_profile.html',context=b) 
     else:
-        return redirect('/tribhuwan_university/login_tribhuwan_university')      
+        return redirect('/tribhuwan_university/login_tribhuwan_university')   
+
+    
+
 
 
     

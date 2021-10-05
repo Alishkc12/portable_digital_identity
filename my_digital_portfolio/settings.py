@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'dept_list',
     'accounts',
     'hseb',
-    'phonenumber_field'
+    'phonenumber_field',
+    'tribhuwan_university'
  
 ]
 AUTH_USER_MODEL = 'accounts.User'
