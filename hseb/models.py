@@ -16,6 +16,7 @@ def generate_slug(text):
 class dept_hseb(models.Model):
     name= models.CharField(max_length=50)
     img = models.ImageField(upload_to='static/img/dept1/hseb')
+    slug=models.CharField(max_length=10,default="")
     
 
     def save(self, *args, **kwargs):
@@ -44,7 +45,7 @@ class student_main(models.Model):
 
 
     def __str__(self):
-        return self.citizen_student_id
+        return self.name
 
 
     class Meta:
@@ -128,8 +129,8 @@ class science_class_12(models.Model):
             raise ValidationError('bio and comp one need to be filled')
         elif not (self.bio_prac  and self.comp_prac) is None:
             raise ValidationError('both bio and comp cant be filled..please check')   
-    def __str__(self):
-        return self.slug
+    # def __str__(self):
+    #     return self.slug
     class Meta:
         verbose_name_plural='student hseb 12 marks'
 
@@ -182,8 +183,8 @@ class science_class_11(models.Model):
             raise ValidationError('bio and comp one need to be filled')
         elif not (self.bio_prac  and self.comp_prac) is None:
             raise ValidationError('both bio and comp cant be filled..please check')   
-    def __str__(self):
-        return self.slug
+    # def __str__(self):
+    #     return self.slug
     class Meta:
         verbose_name_plural='student hseb 11 marks'
 

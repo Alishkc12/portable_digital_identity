@@ -7,7 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from accounts.models import User
 from .form import HSEBSignUpForm
 from django.http import HttpResponse
-from .models import dept_hseb
+from .models import dept_hseb,science_class_12
 
 
 class hseb_register(CreateView):
@@ -67,15 +67,21 @@ def profile(request):
 
 
 
-def test(request):
+def class_12(request):
     if request.user.is_authenticated:
         if request.user.is_hseb == False:
             return redirect('/')
 
-        # data=science_class_12.objects.all();
-        # mydata={ 
-        # 'data':data
-        # }
-        return render(request,'dept_citizen.html')
+        data=science_class_12.objects.all();
+        mydata={ 
+        'data':data
+        }
+        return render(request,'dept_citizen.html',context=mydata)
 
-    
+def class_11_12_science(request):
+    if request.user.is_authenticated:
+        if request.user.is_hseb == False:
+            return redirect('/')
+
+       
+        return render(request,'hseb_11_12.html')
