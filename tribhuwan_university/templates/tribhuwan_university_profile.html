@@ -1,0 +1,247 @@
+							
+
+
+<!-- {{request.user.is_tu}} -->
+
+
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+      <meta charset="UTF-8">
+    <meta name="description" content="about us yaknaa">
+    <meta name="keywords" content="Yaknaaads">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Digital Portfolio</title>
+
+
+
+{% load static %}
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="icon" 
+      type="image/png" 
+      href="img/flogo.png">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    
+</head>
+
+<body>
+    
+
+     <div id="fb-root"></div>
+    
+
+      <!-- Your Chat Plugin code -->
+      <div class="fb-customerchat"
+        attribution="setup_tool"
+        page_id="101861958363105"
+  theme_color="#100028">
+      </div>
+   
+    {% if user.is_authenticated %}
+							{% if user.is_tu == True %}
+<div style="float: left;margin-left: 40%;">
+                           <a style="color: white;background: green;padding: 5px;" href="{% url 'logout' %}"><b>logout</b></a>
+                            <b><span style="color: white;background: green;padding: 5px;"><b>User name {{d}}</b></span></b>
+                        </div>
+
+    <!-- Header Section Begin -->
+ 
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option spad set-bg" data-setbg="{% static 'img/breadcrumb-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2 style="color: orange">My Portable Digital Identity</h2>
+                        <div class="breadcrumb__links">
+                        	
+
+                           <a style="color: green" href="#">TU</a>
+                            <span style="color: green">Homepage</span>
+                           
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Portfolio Section Begin -->
+    <section class="portfolio spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="portfolio__filter">
+                        <li style="color: black" class="active" data-filter="*">Tribhuwan university</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="row portfolio__gallery">
+
+                 {% for i in data %}
+
+                 <div class="col-lg-4 col-md-6 col-sm-6 mix {{ i.category }}">
+                    <div class="portfolio__item">
+                        <a href="">
+                        <div class="portfolio__item__video set-bg" data-setbg="{{ i.img.url }}">
+                            
+                        </div>
+                        <div class="portfolio__item__text">
+                        
+                            <ul>
+                                   <u>  <h4 style="color:blue" >{{ i.name }}</h4></u>
+
+                           
+                        </a>
+                            </ul>
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                {% endfor %}
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </section>
+    <!-- Portfolio Section End -->
+
+  
+<footer class="footer" style="background-color: green">
+        <div class="container">
+            <div class="footer__top">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__logo">
+                            <a href="#"><img src="img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="footer__top__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                               <a href="#"><i class="fa fa-google"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__option">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="footer__option__item">
+                            <h5>About this Project</h5>
+                            <p style="text-align: justify;color: white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <!-- <a href="#" class="read__more">Read more <span class="arrow_right"></span></a> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Quick Links(Ofiicer)</h5>
+                            <ul>
+                                <li><a style="color: white" href="#">Tribhuwan university</a></li>
+                                <li><a style="color: white"  href="#">Carrers</a></li>
+                                <li><a style="color: white"  href="#">Contact us</a></li>
+                                <li><a style="color: white"  href="#">Locations</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="footer__option__item">
+                            <h5>Quick Links(Citizen)</h5>
+                            <ul>
+                                <li><a style="color: white"  href="#">Identity Verification</a></li>
+                                <li><a style="color: white"  href="#">Liscence Verification</a></li>
+                                <li><a style="color: white"  href="#">Online Form</a></li>
+                                <li><a style="color: white"  href="#">Complaints</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer__option__item">
+                            <h5>Latest News Reminder</h5>
+                            <p></p>
+                            <form action="#">
+                                <input type="text" style="color: white" placeholder="Email">
+                                <button type="submit"><i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="footer__copyright__text">Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            All rights reserved | </a>
+                        </p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/mixitup.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+</body>
+</html>
+
+
+ {% else %}
+					not authorized
+					{% endif %}
+					{% endif %}
