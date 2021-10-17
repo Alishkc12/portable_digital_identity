@@ -37,7 +37,7 @@ class student_main(models.Model):
     eleven_sym=models.IntegerField()
     twelve_sym=models.IntegerField()
     # faculty=models.CharField(default="",max_length=20)
-    # faculty=models.CharField(max_length=20)
+    faculty=models.CharField(max_length=20,default="")
     img = models.ImageField(upload_to='static/img/dept1/student_hseb')
     
 
