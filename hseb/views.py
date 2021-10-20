@@ -1,13 +1,13 @@
 from django.contrib.auth import login, logout,authenticate
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render,get_object_or_404
 from django.contrib import messages
 from django.views.generic import CreateView
-
+from .models import student_main
 from django.contrib.auth.forms import AuthenticationForm
 from accounts.models import User
 from .form import HSEBSignUpForm
 from django.http import HttpResponse
-from .models import dept_hseb,science_class_12
+from .models import dept_hseb,science_class_12,science_class_11
 
 
 class hseb_register(CreateView):
@@ -78,6 +78,21 @@ def class_12(request):
         }
         return render(request,'dept_citizen.html',context=mydata)
 
+
+
+def class_11(request):
+    if request.user.is_authenticated:
+        if request.user.is_hseb == False:
+            return redirect('/')
+
+        data=science_class_11.objects.all();
+        mydata={ 
+        'data':data
+        }
+        return render(request,'dept_citizen.html',context=mydata)
+
+
+
 def class_11_12_science(request):
     if request.user.is_authenticated:
         if request.user.is_hseb == False:
@@ -85,3 +100,15 @@ def class_11_12_science(request):
 
        
         return render(request,'hseb_11_12.html')
+
+
+def details(request):
+    if request.user.is_authenticated:
+        if request.user.is_hseb == False:
+            return redirect('/')
+
+        data=student_main.objects.all();
+        mydata={ 
+        'data':data
+        }
+        return render(request,'student_details.html',context=mydata)

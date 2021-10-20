@@ -16,7 +16,7 @@ def generate_slug(text):
 class dept_hseb(models.Model):
     name= models.CharField(max_length=50)
     img = models.ImageField(upload_to='static/img/dept1/hseb')
-    slug=models.CharField(max_length=10,default="")
+    slug=models.CharField(null=True,blank=True,max_length=10,default="")
     
 
     def save(self, *args, **kwargs):
@@ -33,13 +33,17 @@ class dept_hseb(models.Model):
 
 
 class student_main(models.Model):
-    citizen_student_id = models.OneToOneField(Citizen,on_delete=models.CASCADE)
+    citizen_student = models.OneToOneField(Citizen,on_delete=models.CASCADE,unique=True)
     name= models.CharField(max_length=50)
     eleven_sym=models.IntegerField()
     twelve_sym=models.IntegerField()
     # faculty=models.CharField(default="",max_length=20)
     faculty=models.CharField(max_length=20,default="")
     img = models.ImageField(upload_to='static/img/dept1/student_hseb')
+    slug=models.SlugField(max_length=10,default="",null=True,blank=True)
+    def save(self, *args, **kwargs):
+        self.slug = self.name
+        super(student_main, self).save(*args, **kwargs)
     
 
 
@@ -81,7 +85,7 @@ class student_main(models.Model):
 
 
 class science_class_12(models.Model):
-    student=models.OneToOneField(Citizen,on_delete=models.CASCADE)
+    student=models.OneToOneField(Citizen,on_delete=models.CASCADE,unique=True)
     phy= models.FloatField(validators=[MaxValueValidator(75)])
     phy_prac= models.FloatField(validators=[MaxValueValidator(25)])
     math= models.FloatField(validators=[MaxValueValidator(75)]) 
@@ -132,10 +136,10 @@ class science_class_12(models.Model):
     # def __str__(self):
     #     return self.slug
     class Meta:
-        verbose_name_plural='student hseb 12 marks'
+        verbose_name_plural='student hseb 12 marks(science)'
 
 class science_class_11(models.Model):
-    student=models.OneToOneField(Citizen,on_delete=models.CASCADE)
+    student=models.OneToOneField(Citizen,on_delete=models.CASCADE,unique=True)
     phy= models.FloatField(validators=[MaxValueValidator(75)])
     phy_prac= models.FloatField(validators=[MaxValueValidator(25)])
     math= models.FloatField(validators=[MaxValueValidator(75)]) 
@@ -186,5 +190,11 @@ class science_class_11(models.Model):
     # def __str__(self):
     #     return self.slug
     class Meta:
-        verbose_name_plural='student hseb 11 marks'
+        verbose_name_plural='student hseb 11 marks science'
+
+
+
+
+
+
 
