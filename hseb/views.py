@@ -7,7 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from accounts.models import User
 from .form import HSEBSignUpForm
 from django.http import HttpResponse
-from .models import dept_hseb,science_class_12,science_class_11
+from .models import dept_hseb,science_class_12,science_class_11,mgmt_class_11,mgmt_class_12
 
 
 class hseb_register(CreateView):
@@ -85,11 +85,37 @@ def class_11(request):
         if request.user.is_hseb == False:
             return redirect('/')
 
+
         data=science_class_11.objects.all();
         mydata={ 
         'data':data
         }
         return render(request,'dept_citizen.html',context=mydata)
+
+def class_11_mgmt(request):
+    if request.user.is_authenticated:
+        if request.user.is_hseb == False:
+            return redirect('/')
+
+
+        data=mgmt_class_11.objects.all();
+        mydata={ 
+        'data':data
+        }
+        return render(request,'dept_citizen.html',context=mydata)   
+
+def class_12_mgmt(request):
+    if request.user.is_authenticated:
+        if request.user.is_hseb == False:
+            return redirect('/')
+
+
+        data=mgmt_class_12.objects.all();
+        mydata={ 
+        'data':data
+        }
+        return render(request,'dept_citizen.html',context=mydata)                
+        
 
 
 
@@ -100,6 +126,14 @@ def class_11_12_science(request):
 
        
         return render(request,'hseb_11_12.html')
+
+def class_11_12_mgmt(request):
+    if request.user.is_authenticated:
+        if request.user.is_hseb == False:
+            return redirect('/')
+
+       
+        return render(request,'hseb_11_12_mgmt.html')        
 
 
 def details(request):
