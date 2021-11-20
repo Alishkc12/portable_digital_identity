@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>New Bank acc</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'><link rel="stylesheet" href="{% static 'citizen/style.css' %}">
+
+</head>
+<body>
+<div class="a">
+	
+</div>
+<!-- partial:index.partial.html -->
+<section class="wizard-section">
+		<div class="row no-gutters">
+			<!-- <div class="col-lg-6 col-md-6">
+				<div class="wizard-content-left d-flex justify-content-center align-items-center">
+					<h1></h1>
+				</div>
+			</div> -->
+			<div class="container">
+			<div class="col-lg-12 col-md-12">
+				<div class="form-wizard">
+					<form action="" method="post" role="form">
+						<div class="form-wizard-header">
+						<!-- 	<p>Fill all form field to go next step</p> -->
+						<!-- 	<ul class="list-unstyled form-wizard-steps clearfix">
+								<li ><span style="background: green;">1</span></li>
+								<li><span>2</span></li>
+								<li><span>3</span></li>
+								<li  class="active"><span>4</span></li>
+							</ul> -->
+						</div>
+						<fieldset class="wizard-fieldset show">
+							<center><h5>Liscence Form</h5></center>
+							<select class="form-control wizard-required">
+								<option >Choose Category</option>
+								<option >Bike</option>
+								<option >Scotter</option>
+								<option >Truck</option>
+							
+							</select>
+							<div class="form-group">
+								
+								<div class="wizard-form-radio" required>
+									<input name="radio-name1" id="radio1" type="radio">
+									<label for="radio1">New</label>
+								</div>
+								<div class="wizard-form-radio">
+									<input name="radio-name1" id="radio2" type="radio">
+									<label for="radio2">Add Category</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" id="fname">
+								<label for="fname" class="wizard-form-text-label">First Name*</label>
+								<div class="wizard-form-error"></div>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" id="lname">
+								<label for="lname" class="wizard-form-text-label">Last Name*</label>
+								<div class="wizard-form-error"></div>
+							</div>
+							<div class="form-group">
+								Gender
+								<div class="wizard-form-radio">
+									<input name="radio-name" id="radio1" type="radio">
+									<label for="radio1">Male</label>
+								</div>
+								<div class="wizard-form-radio">
+									<input name="radio-name" id="radio2" type="radio">
+									<label for="radio2">Female</label>
+								</div>
+							</div>
+							
+							
+
+
+							<div class="form-group">
+								<input type="text" class="form-control wizard-required" id="zcode">
+								<label for="zcode" class="wizard-form-text-label">Citizen no</label>
+								<div class="wizard-form-error"></div>
+							</div>
+
+								<div class="form-group">
+									DOB
+								<input type="date" class="form-control wizard-required" id="zcode">
+								<label for="zcode" class="wizard-form-text-label"></label>
+								<div class="wizard-form-error"></div>
+							</div>
+
+
+								<div class="form-group">
+									Blood Group
+								<select class="form-control wizard-required">
+									<option>ab+</option>
+										<option>b+</option>
+											<option>b-</option>
+												<option>o+</option>
+													<option>o-</option>
+														<option>ab-</option>
+								</select>
+								<div class="wizard-form-error"></div>
+							</div>
+							<div class="form-group clearfix">
+								
+									<a href="javascript:;" class="form-wizard-submit float-right">Submit</a>
+
+							
+							</div>
+						</fieldset>	
+						<!--  -->
+				</div>
+			</div>
+		</div>
+	</div>
+	</section>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="{% static 'citizen/script.js' %}./"></script>
+
+</body>
+</html>
