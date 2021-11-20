@@ -49,7 +49,7 @@ class student_main(models.Model):
 
 
     def __str__(self):
-        return self.sym_no
+        return self.name
 
 
     class Meta:

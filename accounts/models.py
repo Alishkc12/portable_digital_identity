@@ -39,6 +39,22 @@ class HSEB(models.Model):
 class Citizen(models.Model):
     name=models.CharField(max_length=100)
     citizenship_no=models.CharField(max_length=100,unique=True) 
+    birthplace=models.CharField(max_length=100,default="")
+    img = models.ImageField(upload_to='static/img/dept1/student_hseb',default="")
+
+    from datetime import datetime
+
+    date = models.DateField(default=datetime.now)
+
+    mothers_name=models.CharField(max_length=100,default="")
+    fathers_name=models.CharField(max_length=100,default="")
+    spouse_name=models.CharField(max_length=100,default="",null=True,blank=True)
+    district=models.CharField(max_length=100,default="")
+    address=models.CharField(max_length=100,default="")
+    ward_no=models.CharField(max_length=100,default="")
+    gender=models.CharField(max_length=100,default="")
+    nagrita_date=  models.DateField(default=datetime.now)
+
 
     def __str__(self):
         return self.citizenship_no       

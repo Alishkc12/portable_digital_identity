@@ -34,7 +34,7 @@ class student_main_tu(models.Model):
 
 
     def __str__(self): 
-        return self.slug
+        return self.name
 
 
     class Meta:
@@ -87,7 +87,44 @@ class csit_subj1(models.Model):
 
     slug=models.CharField(null=True,blank=True,max_length=10,default="")
     percentage=models.CharField(null=True,blank=True,max_length=10,default="")
-    result=models.CharField(null=True,blank=True,max_length=10,default="")  
+    result=models.CharField(null=True,blank=True,max_length=10,default="")
+    result2=models.CharField(null=True,blank=True,max_length=10,default="")  
+    result3=models.CharField(null=True,blank=True,max_length=10,default="")  
+    result4=models.CharField(null=True,blank=True,max_length=10,default="")  
+    result5=models.CharField(null=True,blank=True,max_length=10,default="")  
+    result6=models.CharField(null=True,blank=True,max_length=10,default="")    
+    result7=models.CharField(null=True,blank=True,max_length=10,default="")  
+    result8=models.CharField(null=True,blank=True,max_length=10,default="")  
+
+
+
+
+
+    # stat1= models.FloatField(validators=[MaxValueValidator(60)],default=0)
+    # stat2_prac= models.FloatField(validators=[MaxValueValidator(40)],default=0)
+
+
+    # microprocessor= models.FloatField(validators=[MaxValueValidator(60)],default=0) 
+    # microprocessor_prac= models.FloatField(validators=[MaxValueValidator(40)],default=0)  
+
+
+
+    # math1= models.FloatField(validators=[MaxValueValidator(80)],default=0)
+    # math1_prac= models.FloatField(validators=[MaxValueValidator(20)],default=0)
+
+
+    # discretestructure_program= models.FloatField(validators=[MaxValueValidator(60)],default=0) 
+    # discretestructure_prac= models.FloatField(validators=[MaxValueValidator(40)],default=0)  
+
+
+
+
+    # oop= models.FloatField(validators=[MaxValueValidator(60)],default=0) 
+    # oop_prac= models.FloatField(validators=[MaxValueValidator(40)],default=0) 
+
+    
+    # percentag2e=models.CharField(null=True,blank=True,max_length=10,default="")
+    # result2=models.CharField(null=True,blank=True,max_length=10,default="")  
 
 
 
@@ -105,16 +142,23 @@ class csit_subj1(models.Model):
 
 
         if(self.phy>24 and self.digitallogic>24 and self.math>24 and self.c_program>24 and self.iit>8 and self.phy_prac>8 and self.digitallogic_prac>8 and self.math_prac>8 and self.c_program_prac>8and self.iit_prac>8):
-            if(self.bio>24 or self.comp>24):
-                if(self.bio_prac>8 or self.comp_prac>8):
-                    result="pass"
-                else:
-                    result="fail"    
+            
+            result="pass"
         else:
-            result="fail" 
+            result="fail"    
+        
         self.percentage=a1
         self.result=result
+        self.result8="pass"
+        self.result2="pass"
+        self.result3="pass"
+        self.result4="pass"
+        self.result5="pass"
+        self.result6="pass"
+        self.result7="pass"
         super(csit_subj1, self).save(*args, **kwargs)
     class Meta:
         verbose_name_plural='csit 1st sem' 
+
+    
 

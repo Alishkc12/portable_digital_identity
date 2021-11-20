@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'accounts',
     'hseb',
     'phonenumber_field',
-    'tribhuwan_university'
+    'tribhuwan_university',
+    'citizen'
  
 ]
 AUTH_USER_MODEL = 'accounts.User'

@@ -46,12 +46,20 @@
         page_id="101861958363105"
   theme_color="#100028">
       </div>
+
+      
    {% if user.is_authenticated %}
                             
 <div style="float: left;margin-left: 40%;">
                            <a style="color: white;background: green;padding: 5px;" href="{% url 'logout' %}"><b>logout</b></a>
                             <b><span style="color: white;background: green;padding: 5px;"><b>Admin</b></span></b>
                         </div>
+        
+
+
+
+
+                     
 
     {% endif %} 
 
@@ -90,8 +98,8 @@
                         <li style="color: black" data-filter=".education">Education</li>
                        <li style="color: black" data-filter=".health">Health</li>
                  <!--         <li style="color: black" data-filter=".transportation">Transportation and Security</li> -->
-                        <li style="color: black" data-filter=".online_form">Citizen online form </li>
-                        <li style="color: black" data-filter=" .online_verify">Citizen Identity Verification</li>
+                    
+                        <li style="color: black" data-filter=" .online_verify">Government Organization</li>
                         <li style="color: black" data-filter=" .security">Security</li>
                     </ul>
                 </div>
