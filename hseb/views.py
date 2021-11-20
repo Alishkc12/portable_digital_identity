@@ -7,7 +7,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from accounts.models import User
 from .form import HSEBSignUpForm
 from django.http import HttpResponse
-from .models import dept_hseb,science_class_12,science_class_11,mgmt_class_11,mgmt_class_12
+from .models import dept_hseb,science_class_12,science_class_11
 
 
 class hseb_register(CreateView):

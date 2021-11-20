@@ -7,4 +7,9 @@ urlpatterns=[
      path('login_tribhuwan_university/',views.login_tribhuwan_university, name='tribhuwan_university_login'),
      path('logout/',views.logout_view, name='logout'),
      path('profile/',views.profile, name='profile'),
+     path('profile/bsc_csit/',views.csit, name='csit'),
+     path('bsc_csit/',views.csit, name='csit'),
+     path('class_csit/',views.class_csit, name='class_csit'),
+     path('details/',views.details, name= 'view_student_details_tu'),
+  
 ]

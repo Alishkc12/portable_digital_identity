@@ -15,6 +15,6 @@ urlpatterns=[
      path('2_science/',views.class_11_12_science, name='test1'),
      path('2_mgmt/',views.class_11_12_mgmt, name='test2'),
      path('profile/2_mgmt/',views.class_11_12_mgmt, name='test2'),
-     path('details/',views.details, name= 'view_student_details'),
+     path('details/',views.details, name= 'view_student_details'), 
     
 ]

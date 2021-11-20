@@ -6,8 +6,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from accounts.models import User
 from .form import Tribhuwan_universitySignUpForm
 from django.http import HttpResponse
-from .models import dept_tu
-
+from .models import dept_tu,csit_subj1
+from hseb.models import science_class_11,student_main
 
 class tribhuwan_university_register(CreateView):
 
@@ -66,8 +66,42 @@ def profile(request):
     else:
         return redirect('/tribhuwan_university/login_tribhuwan_university')   
 
+
+
+
+def csit(request):
+    if request.user.is_authenticated:
+        if request.user.is_tu == False:
+            return redirect('/')
+
+       
+        return render(request,'csit.html')
     
 
 
 
+ 
+
+def class_csit(request):
+    if request.user.is_authenticated:
+        if request.user.is_tu == False:
+            return redirect('/')
+
+        data=science_class_11.objects.all();
+        mydata={ 
+        'data':data
+        }
+        return render(request,'dept_citizen_tu.html',context=mydata)
     
+
+
+def details(request):
+    if request.user.is_authenticated:
+        if request.user.is_tu == False:
+            return redirect('/')
+
+        data=student_main.objects.all();
+        mydata={ 
+        'data':data
+        }
+        return render(request,'student_details_tu.html',context=mydata)
